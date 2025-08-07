@@ -8,14 +8,11 @@ public static class UserInput
         {
             Console.Write($"{prompt} [Y/N] > ");
             char input = Color.ReadKeyColor(ConsoleColor.Cyan);
+            input = char.ToLower(input);
             Console.WriteLine();
-            if (input == 'y')
+            if (input == 'y' || input == 'n')
             {
-                return true;
-            }
-            if (input == 'n')
-            {
-                return false;
+                return input == 'y';
             }
             Color.WriteLineColor(ConsoleColor.Red, "Input must be either 'y' or 'n'.");
         }

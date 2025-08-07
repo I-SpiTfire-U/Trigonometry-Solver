@@ -27,7 +27,7 @@ public static class Color
         ConsoleColor defaultColor = Console.ForegroundColor;
 
         Console.ForegroundColor = color;
-        char result = char.ToLower(Console.ReadKey().KeyChar);
+        char result = Console.ReadKey().KeyChar;
         Console.ForegroundColor = defaultColor;
 
         return result;
